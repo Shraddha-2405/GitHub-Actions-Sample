@@ -28,5 +28,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run pwd
+    - name: Install
+      run: install pwd
+    - name: Test
+      run: pwd test
+
+
