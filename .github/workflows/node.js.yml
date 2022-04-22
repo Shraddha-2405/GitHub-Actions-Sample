@@ -4,20 +4,23 @@
 name: Github Actions Sample
 
 on:
-    pull_request:
     push:
             branches:
-                 -master
-                 -develop
+                 - main
+                 - 'feature/**'
+                 - 'develop/**'
+    pull_request:
+        types: [opened, reopened, review_requested]
   
 
 jobs:
+  opensource COBOL tests:
+  runs-on: ubuntu-latest
   build: 
   tests:
      name: GitHub Actions Sample
-  runs-on: ubuntu-latest
+ 
 
-    strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
