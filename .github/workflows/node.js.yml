@@ -1,30 +1,15 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Github Actions Sample
 
-on:
-    push:
-            branches:
-                 - main
-                 - 'feature/**'
-                 - 'develop/**'
-    pull_request:
-        types: [opened, reopened, review_requested]
-  
-
+name: execute-pwd
+on: [push]
 jobs:
-     opensource COBOL test:
-                 runs-on: ubuntu-latest
-  
-     # Start Opensource COBOL server:
-services: 
-opensource COBOL:
-image : opensource COBOL:1.gz
-ports:
-
-env:
-   
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: pwd
 
 
 
